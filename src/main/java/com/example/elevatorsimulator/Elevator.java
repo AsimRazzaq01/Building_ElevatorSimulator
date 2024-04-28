@@ -1,5 +1,7 @@
 package com.example.elevatorsimulator;
 
+import javafx.event.ActionEvent;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -40,8 +42,7 @@ public abstract class Elevator {
         } else {
             currentFloor = Math.max(currentFloor - 1,1);
         }
-        return 0;
-
+        return currentFloor;
     }
 
     // Method to move the Express elevator
@@ -55,7 +56,7 @@ public abstract class Elevator {
         } else {
             currentFloor= Math.max(currentFloor - 3, 1);
         }
-        return 0;
+        return currentFloor;
     }
 
     // Abstract method to get the maximum floor the elevator can go to (to be implemented in subclasses)
@@ -95,6 +96,24 @@ public abstract class Elevator {
         }
         return count;
     }
+
+
+
+    public void moveARCDown(ActionEvent event) {
+    }
+
+    public void moveARCup(ActionEvent event) {
+    }
+
+    public void moveCircleUp(ActionEvent event) {
+    }
+
+    public void moveCircleDown(ActionEvent event) {
+    }
+
+
+
+
 
 }
 

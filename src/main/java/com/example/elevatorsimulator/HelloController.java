@@ -39,7 +39,7 @@ public class HelloController {
     @FXML
     public void StartSimulation(ActionEvent event) {
         // Implement logic to start the simulation when the button is clicked
-        ElevatorSimulation simulation = new ElevatorSimulation(elevators,elevators123, 50, 10,this::updateElevatorPosition,this::updateEElevatorPosition, grid); // 10 passengers, 5 iterations
+        ElevatorSimulation simulation = new ElevatorSimulation(elevators, elevators123, 50, 10,this::updateElevatorPosition,this::updateEElevatorPosition, grid, STDelevator, EXPelevator); // 10 passengers, 5 iterations
         simulation.runSimulation();
     }
 

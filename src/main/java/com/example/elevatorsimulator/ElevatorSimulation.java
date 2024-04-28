@@ -38,11 +38,13 @@ public class ElevatorSimulation {
     private List<Passanger> passengers;
     protected int numIterations;
 
-    public ElevatorSimulation(List<Elevator> numElevators,List<Elevator> numElevatorsE, int numPassengers, int numIterations, ElevatorUpdateListener listener,ElevatorUpdateListener123 listener123, GridPane grid) {
+    public ElevatorSimulation(List<Elevator> numElevators,List<Elevator> numElevatorsE, int numPassengers, int numIterations, ElevatorUpdateListener listener,ElevatorUpdateListener123 listener123, GridPane grid, Arc arc, Circle circle) {
         this.elevators = new ArrayList<>();
         this.elevators123 = new ArrayList<>();
         this.updateListener = listener;
         this.updateListener123 = listener123;
+        this.STDelevator = arc;
+        this.EXPelevator = circle;
         if (grid == null ) {
             throw new IllegalArgumentException("GridPane cannot be null");
         }
@@ -181,11 +183,8 @@ public class ElevatorSimulation {
                 GridPane.setRowIndex(EXPelevator, currentRow); // Set EXPelevator to the updated row
                 grid.getChildren().add(EXPelevator); // Add EXPelevator to the updated position in the GridPane
             }
-
         });
-
     }
-
 
     public void moveARCDown(ActionEvent event) {
     }
@@ -198,6 +197,8 @@ public class ElevatorSimulation {
 
     public void moveCircleDown(ActionEvent event) {
     }
+
+
 }
 
 
